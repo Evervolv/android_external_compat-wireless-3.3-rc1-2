@@ -12,7 +12,6 @@ drivers/net/wireless/Makefile.bk
 drivers/net/wireless/ath/Makefile.bk
 drivers/ssb/Makefile.bk
 net/wireless/Makefile.bk
-env.sh
 include/linux/compat_autoconf.h
 .built-in.o.cmd
 .compat_autoconf_compat-wireless-v3.3-rc1-2
