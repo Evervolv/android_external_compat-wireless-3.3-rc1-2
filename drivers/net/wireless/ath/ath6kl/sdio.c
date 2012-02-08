@@ -1345,9 +1345,18 @@ static struct sdio_driver ath6kl_sdio_driver = {
 #endif
 };
 
+#ifdef CONFIG_MACH_TENDERLOIN
+extern int board_sdio_wifi_enable(int);
+extern int board_sdio_wifi_disable(int);
+#endif
+
 static int __init ath6kl_sdio_init(void)
 {
 	int ret;
+
+#ifdef CONFIG_MACH_TENDERLOIN
+	board_sdio_wifi_enable(1);
+#endif
 
 	ret = sdio_register_driver(&ath6kl_sdio_driver);
 	if (ret)
@@ -1358,6 +1367,11 @@ static int __init ath6kl_sdio_init(void)
 
 static void __exit ath6kl_sdio_exit(void)
 {
+
+#ifdef CONFIG_MACH_TENDERLOIN
+	board_sdio_wifi_disable(1);
+#endif
+
 	sdio_unregister_driver(&ath6kl_sdio_driver);
 }
 
