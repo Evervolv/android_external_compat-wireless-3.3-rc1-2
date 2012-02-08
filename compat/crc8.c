@@ -14,6 +14,10 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#ifdef pr_fmt
+#undef pr_fmt
+#endif
+
 #define pr_fmt(fmt)		KBUILD_MODNAME ": " fmt
 
 #include <linux/module.h>
