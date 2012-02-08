@@ -12,3 +12,4 @@ drivers/net/wireless/Makefile.bk
 drivers/net/wireless/ath/Makefile.bk
 drivers/ssb/Makefile.bk
 net/wireless/Makefile.bk
+env.sh
