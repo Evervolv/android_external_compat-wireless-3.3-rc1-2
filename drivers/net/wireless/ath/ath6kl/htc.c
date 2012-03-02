@@ -532,7 +532,7 @@ static int htc_check_credits(struct htc_target *target,
 			     int *req_cred)
 {
 
-	*req_cred = (len > target->tgt_cred_sz) ?
+	*req_cred = (target->tgt_cred_sz && len > target->tgt_cred_sz) ?
 		     DIV_ROUND_UP(len, target->tgt_cred_sz) : 1;
 
 	ath6kl_dbg(ATH6KL_DBG_CREDIT, "credit check need %d got %d\n",
