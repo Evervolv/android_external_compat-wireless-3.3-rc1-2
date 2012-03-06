@@ -847,7 +847,11 @@ static int ath6kl_sdio_suspend(struct ath6kl *ar, struct cfg80211_wowlan *wow)
 	}
 
 deepsleep:
+#if 0 // disable sleep
 	return ath6kl_cfg80211_suspend(ar, ATH6KL_CFG_SUSPEND_DEEPSLEEP, NULL);
+#else
+	return 0;
+#endif
 }
 
 static int ath6kl_sdio_resume(struct ath6kl *ar)
